@@ -30,7 +30,8 @@ Este ejercicio consiste en crear una página web donde, al pulsar un botón, el 
 
 Al pulsar el botón, el fondo cambia de color aleatoriamente y se muestra el valor RGB en la cajita con gradiente.
 
-![Demostración del Ejercicio 1](ejercicio1gif.gif)
+![Demostración del Ejercicio 1](./ejercicio1gif.gif)
+
 
 ---
 
@@ -38,3 +39,4 @@ Al pulsar el botón, el fondo cambia de color aleatoriamente y se muestra el val
 - `ejercicio1.html` → Página web principal.
 - `ejercicio1.js` → Script que controla el cambio de color y la actualización del texto.
 - `ejercicio1gif.gif` → GIF mostrando el funcionamiento.
+

@@ -82,5 +82,52 @@ Al pulsar el botón, se calcula el área del rectángulo y se muestra en la pág
 - `ejercicio2gif.gif` → GIF mostrando el funcionamiento del ejercicio.
 
 
+# Ejercicio 3 - Listado Dinámico
+
+Este ejercicio consiste en crear una página web donde el usuario puede añadir elementos a una lista de manera dinámica.  
+
+---
+
+## Pasos realizados
+
+1. **HTML básico**
+   - Creamos un campo de entrada (`input`) para escribir el nuevo elemento.
+   - Añadimos un botón con el texto "Añadir a la lista".
+   - Creamos una lista vacía `<ul>` donde se agregarán los elementos.
+   - Todo el contenido está centrado vertical y horizontalmente usando `flexbox`.
+
+2. **Estilos CSS**
+   - Los inputs y el botón tienen padding, tamaño de fuente y bordes redondeados.
+   - El botón tiene un efecto hover.
+   - La lista y los elementos `<li>` tienen márgenes para mejorar la visualización.
+
+3. **JavaScript**
+   - Se seleccionan los elementos del DOM: input, botón y lista.
+   - Función `añadirElemento`:
+     - Obtiene el texto del input y elimina espacios en blanco.
+     - Valida que el texto no esté vacío.
+     - Crea un nuevo elemento `<li>` usando `document.createElement`.
+     - Asigna el texto al `<li>` y lo añade a la lista con `appendChild`.
+     - Limpia el input para el siguiente elemento.
+   - Se añade un evento `click` al botón para ejecutar la función.
+   - También se añadió la opción de pulsar `Enter` para añadir un elemento.
+
+---
+
+## Resultado
+
+Al escribir un texto en el campo y pulsar el botón, el elemento se añade a la lista de manera dinámica.  
+
+![Demostración del Ejercicio 3](ej3/ejercicio3gif.gif)
+
+---
+
+### Archivos entregables
+- `ejercicio3.html` → Página web principal.  
+- `ejercicio3.js` → Script que añade elementos a la lista.  
+- `ejercicio3gif.gif` → GIF mostrando cómo se añaden 3 elementos a la lista.
+
+
+
 
 

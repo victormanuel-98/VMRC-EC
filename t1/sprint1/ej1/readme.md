@@ -28,7 +28,7 @@ Este ejercicio consiste en crear una página web donde, al pulsar un botón, el 
 
 ## Resultado
 
-![Demostración del Ejercicio 1](t1/sprint1/ej1/ejercicio1gif.gif)
+![Demostración del Ejercicio 1](./ejercicio1gif.gif)
 
 
 ---

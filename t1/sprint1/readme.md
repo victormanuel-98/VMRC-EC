@@ -38,5 +38,49 @@ Este ejercicio consiste en crear una página web donde, al pulsar un botón, el 
 - `ejercicio1.js` → Script que controla el cambio de color y la actualización del texto.
 - `ejercicio1gif.gif` → GIF mostrando el funcionamiento.
 
+# Ejercicio 2 - Calculadora de Área de un Rectángulo
+
+Este ejercicio consiste en crear una página web donde, al introducir el ancho y el alto de un rectángulo y pulsar un botón, se calcule su área y se muestre el resultado en la página.
+
+---
+
+## Pasos realizados
+
+1. **HTML básico**
+   - Creamos dos campos de entrada (`input`) para ancho y alto.
+   - Añadimos un botón con el texto "Calcular Área".
+   - Añadimos un párrafo `<p>` donde se mostrará el resultado.
+   - Todo el contenido está centrado vertical y horizontalmente usando `flexbox`.
+
+2. **Estilos CSS**
+   - Los inputs y el botón tienen padding, tamaño de fuente y bordes redondeados.
+   - El botón tiene un efecto hover para mejorar la interacción.
+   - El resultado se muestra con tamaño de fuente más grande y en negrita.
+
+3. **JavaScript**
+   - Se seleccionan los elementos del DOM: inputs, botón y párrafo de resultado.
+   - Función `calcularArea`:
+     - Convierte los valores de los inputs a números.
+     - Valida que ambos sean números.
+     - Calcula el área usando `ancho * alto`.
+     - Muestra el resultado en el párrafo.
+   - Evento `click` en el botón para ejecutar la función.
+
+---
+
+## Resultado
+
+Al pulsar el botón, se calcula el área del rectángulo y se muestra en la página.  
+
+![Demostración del Ejercicio 2](ej2/ejercicio2gif.gif)
+
+---
+
+### Archivos entregables
+- `ejercicio2.html` → Página web principal.  
+- `ejercicio2.js` → Script que calcula el área y actualiza el resultado.  
+- `ejercicio2gif.gif` → GIF mostrando el funcionamiento del ejercicio.
+
+
 
 

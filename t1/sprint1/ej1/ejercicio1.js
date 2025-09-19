@@ -23,6 +23,6 @@ btn.addEventListener("click", () => {
 
     // Ajuste de contraste del texto según luminosidad
     const rgbMatch = color.rgb.match(/\d+/g);
-    const luminosidad = 0.299*rgbMatch[0] + 0.587*rgbMatch[1] + 0.114*rgbMatch[2];
+    const luminosidad = 0.299 * rgbMatch[0] + 0.587 * rgbMatch[1] + 0.114 * rgbMatch[2];
     texto.style.color = luminosidad > 186 ? 'black' : 'white';
 });

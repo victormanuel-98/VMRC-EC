@@ -128,6 +128,45 @@ Al escribir un texto en el campo y pulsar el botón, el elemento se añade a la 
 - `ejercicio3gif.gif` → GIF mostrando cómo se añaden 3 elementos a la lista.
 
 
+# Ejercicio 4 - Hover y Estilo Dinámico
+
+Este ejercicio consiste en crear una página web con varios elementos `<div>` donde, al pasar el ratón sobre ellos, se cambia su estilo dinámicamente y al salir se restauran los estilos originales.
+
+---
+
+## Pasos realizados
+
+1. **HTML básico**
+   - Creamos varios `<div>` con la clase `miDiv` y con textos diferentes.
+   - Todos los divs están centrados y distribuidos usando `flexbox` con `flex-wrap` para varias filas.
+
+2. **Estilos CSS**
+   - Los divs tienen tamaño fijo, color de fondo y color de texto originales.
+   - Se añadieron bordes redondeados, cursor tipo puntero y transición suave (`transition`) para animar los cambios de color.
+
+3. **JavaScript**
+   - Se seleccionan todos los divs con `querySelectorAll`.
+   - Se recorre cada div para añadir dos eventos:
+     - `mouseover`: al pasar el ratón, cambia el fondo a azul y el texto a blanco. Además, guarda los estilos originales usando `dataset` para poder restaurarlos.
+     - `mouseout`: al salir el ratón, restaura los estilos originales guardados.
+
+---
+
+## Resultado
+
+Al pasar el ratón sobre cada div, su fondo cambia a azul y el texto a blanco, y al mover el ratón fuera del div, se restauran los estilos originales.  
+
+![Demostración del Ejercicio 4](ej4/ejercicio4gif.gif)
+
+---
+
+### Archivos entregables
+- `ejercicio4.html` → Página web principal.  
+- `ejercicio4.js` → Script que gestiona los eventos de hover y restaura estilos.  
+- `ejercicio4gif.gif` → GIF mostrando cómo al pasar por encima cambia el fondo y el texto, y se restaura al salir.
+
+
+
 
 
 

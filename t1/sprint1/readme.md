@@ -165,6 +165,33 @@ Al pasar el ratón sobre cada div, su fondo cambia a azul y el texto a blanco, y
 - `ejercicio4.js` → Script que gestiona los eventos de hover y restaura estilos.  
 - `ejercicio4gif.gif` → GIF mostrando cómo al pasar por encima cambia el fondo y el texto, y se restaura al salir.
 
+# Ejercicio 5: Detección de Clics y Generación de XPath
+
+## Descripción
+Este ejercicio consiste en detectar clics en los elementos de la página y mostrar su XPath único.  
+
+- Al hacer clic en cualquier elemento del **documento principal**, se muestra una alerta con su XPath y se actualiza el párrafo en pantalla.
+- Al hacer clic dentro del **iframe**, también se muestra una alerta con el XPath combinado del iframe y del elemento clicado, siempre que el navegador lo permita.
+- Si el contenido del iframe no es accesible (restricciones de seguridad), se muestra una alerta explicativa.
+
+> Nota: El HTML **no ha sido modificado**, y se respetan las políticas de seguridad del navegador. Por ello, la detección de elementos dentro de iframes de tipo `data:` puede estar limitada en algunos navegadores.
+
+## Archivos entregados
+- `ejercicio5.js` → Código JavaScript que implementa la funcionalidad.
+- `Ejercicio5.html` → HTML proporcionado para el ejercicio (no modificado).
+
+## Instrucciones de uso
+1. Abrir `Ejercicio5.html` en un navegador moderno.
+2. Hacer clic sobre cualquier elemento del documento principal.
+3. Hacer clic sobre el botón del iframe.
+4. Observar las alertas y el texto actualizado en el párrafo con id `xpathConsole`.
+
+## GIF demostrativo
+Aquí se puede insertar un GIF mostrando la funcionalidad:
+
+![Demostración del Ejercicio 5](ej5/ejercicio5gif.gif)
+
+
 
 
 

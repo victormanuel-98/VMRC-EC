@@ -229,7 +229,8 @@ El tablero tiene un **fondo tipo mesa** para hacerlo más inmersivo.
 ---
 
 ## GIF de demostración
-![GIF de demostración](ej5/ejercicio5gif.gif)
+![GIF de demostración](ej5/ejercicio5.gif)
+
 
 
 

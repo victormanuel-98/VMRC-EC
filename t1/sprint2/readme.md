@@ -32,3 +32,58 @@ Cuando el tiempo llega a cero, aparece el mensaje: **"¡Tiempo finalizado!"**.
 Aquí se muestra el funcionamiento del ejercicio con un ejemplo de 5 segundos:  
 
 ![Demostración Ejercicio 1](ejercicio1.gif)
+
+
+
+# 🧮 Ejercicio 2: Calculadora Básica
+
+## Descripción
+Este ejercicio consiste en crear una **calculadora básica** que permite realizar operaciones de:
+- Suma
+- Resta
+- Multiplicación
+- División  
+
+El usuario introduce **dos números**, selecciona la operación y al hacer clic en **Calcular**, se muestra el resultado en pantalla.  
+
+---
+
+## Archivos entregados
+- `ejercicio2.html` → Estructura de la calculadora.  
+- `ejercicio2.js` → Lógica de operaciones y control de eventos.  
+
+---
+
+## Instrucciones de uso
+1. Abrir el archivo `ejercicio2.html` en un navegador web.  
+2. Introducir dos números en los campos correspondientes.  
+3. Seleccionar la operación en el menú desplegable.  
+4. Pulsar el botón **Calcular**.  
+5. El resultado se mostrará en la página.  
+
+---
+
+## Objetivos de aprendizaje
+- Manejo de **eventos** (`click`).  
+- **Validación de entradas** de usuario (`isNaN`).  
+- Uso de **operaciones matemáticas básicas** (+, -, *, /).  
+- Manipulación del **DOM** para mostrar resultados dinámicamente.  
+
+---
+
+## Pruebas requeridas
+El GIF de demostración debe mostrar los siguientes casos de prueba:  
+
+1. Suma de **10 + 12** → resultado `22`.  
+2. Resta de **10 - 12** → resultado `-2`.  
+3. Multiplicación de **5 × 4** → resultado `20`.  
+4. Multiplicación de **5 × 0** → resultado `0`.  
+5. División de **5 ÷ 4** → resultado `1.25`.  
+6. División de **5 ÷ 0** → resultado `"INDEFINIDO"`.  
+
+---
+
+## Demostración en GIF
+Ejemplo de funcionamiento de la calculadora:  
+
+![Demostración Ejercicio 2](ejercicio2.gif)

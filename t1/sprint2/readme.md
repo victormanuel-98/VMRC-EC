@@ -87,3 +87,148 @@ El GIF de demostración debe mostrar los siguientes casos de prueba:
 Ejemplo de funcionamiento de la calculadora:  
 
 ![Demostración Ejercicio 2](ejercicio2.gif)
+
+
+
+# 📊 Ejercicio 3: Encuesta con Gráfico de Barras
+
+## Descripción
+Este ejercicio consiste en crear una **encuesta** donde el usuario puede seleccionar una opción entre varias (por ejemplo: "¿Cuál es tu color favorito?").  
+Al enviar la respuesta, se muestran los resultados en un **gráfico de barras** que se actualiza dinámicamente cada vez que se envía una nueva respuesta.
+
+---
+
+## Archivos entregados
+- `ejercicio3.html` → Estructura de la encuesta y área de resultados.  
+- `ejercicio3.js` → Lógica para contar votos y actualizar el gráfico dinámicamente.  
+
+---
+
+## Instrucciones de uso
+1. Abrir el archivo `ejercicio3.html` en un navegador.  
+2. Seleccionar una opción en la encuesta.  
+3. Pulsar el botón **Enviar**.  
+4. Observar cómo se actualiza el gráfico de barras mostrando los votos de cada opción.  
+5. Repetir para agregar más votos y ver la actualización dinámica del gráfico.
+
+---
+
+## Objetivos de aprendizaje
+- Manejo de **eventos** (`click`).  
+- Manipulación del **DOM** para actualizar elementos dinámicamente.  
+- Lógica para contar votos y representar los resultados visualmente.  
+
+---
+
+## Pruebas requeridas
+El GIF de demostración debe mostrar al menos:  
+- Selección de varias opciones y envío de votos.  
+- Actualización dinámica del gráfico de barras reflejando el número de votos.  
+
+---
+
+## Demostración en GIF
+Ejemplo de funcionamiento de la encuesta:  
+
+![Demostración Ejercicio 3](ejercicio3.gif)
+
+
+
+# ⏱️ Ejercicio 4: Cronómetro con Controles
+
+## Descripción
+Este ejercicio consiste en crear un **cronómetro** que permite al usuario:
+- Iniciarlo  
+- Pausarlo  
+- Reiniciarlo  
+
+El cronómetro se actualiza cada segundo y muestra el tiempo en **minutos y segundos**.
+
+---
+
+## Archivos entregados
+- `ejercicio4.html` → Contiene los botones de control y el display del cronómetro.  
+- `ejercicio4.js` → Lógica para iniciar, pausar y reiniciar el cronómetro con `setInterval`.  
+
+---
+
+## Instrucciones de uso
+1. Abrir el archivo `ejercicio4.html` en un navegador.  
+2. Pulsar el botón **Iniciar** para que el cronómetro comience a contar.  
+3. Pulsar **Pausar** para detenerlo temporalmente.  
+4. Pulsar **Reiniciar** para volver a cero y detener el cronómetro.  
+5. El tiempo se muestra en formato `MM:SS` en el área de display.  
+
+---
+
+## Objetivos de aprendizaje
+- Uso avanzado de **eventos** (click en múltiples botones).  
+- Manejo de **temporizadores** (`setInterval` y `clearInterval`).  
+- Actualización continua del **DOM** para mostrar el tiempo dinámicamente.  
+
+---
+
+## Pruebas requeridas
+El GIF de demostración debe mostrar:  
+1. El cronómetro comienza a contar correctamente al pulsar **Iniciar**.  
+2. Al pulsar **Pausar**, el cronómetro se detiene en el tiempo actual.  
+3. Al pulsar **Reiniciar**, el cronómetro vuelve a cero.  
+4. El cronómetro puede manejar largos períodos de tiempo sin errores.  
+
+---
+
+## Demostración en GIF
+Ejemplo de funcionamiento del cronómetro:  
+
+![Demostración Ejercicio 4](ejercicio4.gif)
+
+
+
+# Ejercicio 5: Juego de Memoria con Cartas
+
+## Descripción
+Este ejercicio consiste en un **juego de memoria** donde el jugador debe encontrar todas las parejas de cartas.  
+Cada carta tiene una **imagen frontal** y una **imagen trasera** (`back.png`).  
+El tablero tiene un **fondo tipo mesa** para hacerlo más inmersivo.  
+
+### Funcionalidades
+- Voltear cartas al hacer clic.  
+- Mantener las cartas coincidentes visibles.  
+- Voltear automáticamente las cartas no coincidentes después de un segundo.  
+- Detectar cuando todas las parejas han sido encontradas.  
+- Reiniciar el juego y barajar las cartas.  
+
+---
+
+## Archivos del ejercicio
+- `ejercicio5.html` → Contiene la estructura HTML del juego y el contenedor de cartas.  
+- `ejercicio5.js` → Contiene la lógica de juego: eventos, volteo de cartas, comparación de parejas y reinicio.  
+- Carpeta `cards/` → Contiene:
+  - `img1.png` … `img8.png` → imágenes de las cartas.  
+  - `back.png` → imagen de la parte trasera de la carta.  
+  - `mesa.png` → imagen de fondo tipo mesa.  
+
+---
+
+## Cómo jugar
+1. Abrir `ejercicio5.html` en un navegador compatible.  
+2. Hacer clic sobre cualquier carta para voltearla.  
+3. Si las cartas coinciden, permanecen visibles; si no coinciden, se vuelven a ocultar automáticamente.  
+4. Continuar hasta encontrar todas las parejas.  
+5. Para reiniciar el juego, pulsar el botón **Reiniciar Juego**.  
+
+---
+
+## Pruebas
+- Verificar que las cartas se voltean correctamente al hacer clic.  
+- Comprobar que las cartas coincidentes permanecen visibles.  
+- Comprobar que las cartas no coincidentes se vuelven a ocultar después de 1 segundo.  
+- Verificar que el juego detecta cuando todas las parejas han sido encontradas y muestra el mensaje de victoria.  
+- Probar que el botón de reinicio vuelve a barajar las cartas y reinicia el juego correctamente.  
+
+---
+
+## GIF de demostración
+![GIF de demostración](ejercicio5gif.gif)
+
+

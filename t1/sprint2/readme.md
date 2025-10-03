@@ -86,7 +86,7 @@ El GIF de demostración debe mostrar los siguientes casos de prueba:
 ## Demostración en GIF
 Ejemplo de funcionamiento de la calculadora:  
 
-![Demostración Ejercicio 2](ejercicio2.gif)
+![Demostración Ejercicio 2](ej2/ejercicio2.gif)
 
 
 
@@ -130,7 +130,7 @@ El GIF de demostración debe mostrar al menos:
 ## Demostración en GIF
 Ejemplo de funcionamiento de la encuesta:  
 
-![Demostración Ejercicio 3](ejercicio3.gif)
+![Demostración Ejercicio 3](ej3/ejercicio3.gif)
 
 
 
@@ -180,7 +180,7 @@ El GIF de demostración debe mostrar:
 ## Demostración en GIF
 Ejemplo de funcionamiento del cronómetro:  
 
-![Demostración Ejercicio 4](ejercicio4.gif)
+![Demostración Ejercicio 4](ej4/ejercicio4.gif)
 
 
 
@@ -229,7 +229,8 @@ El tablero tiene un **fondo tipo mesa** para hacerlo más inmersivo.
 ---
 
 ## GIF de demostración
-![GIF de demostración](ejercicio5gif.gif)
+![GIF de demostración](ej5/ejercicio5gif.gif)
+
 
 
 

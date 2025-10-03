@@ -31,7 +31,7 @@ Cuando el tiempo llega a cero, aparece el mensaje: **"¡Tiempo finalizado!"**.
 ## Demostración en GIF
 Aquí se muestra el funcionamiento del ejercicio con un ejemplo de 5 segundos:  
 
-![Demostración Ejercicio 1](ejercicio1.gif)
+![Demostración Ejercicio 1](ej1/ejercicio1.gif)
 
 
 
@@ -230,5 +230,6 @@ El tablero tiene un **fondo tipo mesa** para hacerlo más inmersivo.
 
 ## GIF de demostración
 ![GIF de demostración](ejercicio5gif.gif)
+
 
 

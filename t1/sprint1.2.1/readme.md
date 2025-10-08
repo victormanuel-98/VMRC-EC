@@ -57,3 +57,68 @@ A continuación, se muestran los GIFs demostrando el funcionamiento del ejercici
 ![Demostración del Quiz cronometrado](ej1/foto5.gif)
 
 
+----------------------------------------------------------------------------------------------------------
+
+# 🧩 Ejercicio 2: Ahorcado con teclado físico y teclado en pantalla
+
+## 📋 Descripción
+Implementación del clásico **juego del ahorcado**, donde el usuario debe adivinar una palabra secreta letra a letra.  
+El juego puede controlarse tanto con el **teclado físico** como con un **teclado en pantalla (A–Z y Ñ)**.
+
+Cada error muestra progresivamente una parte del muñeco.  
+La partida termina al **acertar toda la palabra** o **agotar las vidas**, con opción de **reiniciar** el juego.
+
+---
+
+## 🧩 Archivos entregados
+- `ejercicio2.html`  
+- `ejercicio2.js`
+
+---
+
+## ⚙️ Funcionamiento
+1. El usuario debe completar el juego pulsando las teclas correspondientes en el teclado digital o en el físico.  
+2. Tiene 6 vidas para poder completar la palabra, una vez agotadas se muestra el mensaje de derrota.  
+3. Si el usuario pierde se bloquea el teclado tanto digital como físico.  
+4. Si responde correctamente se bloquean las letras utilizadas y se mostrará el mensaje de victoria una vez completado.  
+
+---
+
+## 🧠 Objetivos del ejercicio
+- Manejo combinado de eventos (`keydown` y `click`).
+- Manipulación del DOM para actualizar la palabra, teclado y dibujo del muñeco.
+- Control del estado del juego (vidas, letras usadas, victoria/derrota).
+- Implementación accesible mediante regiones `aria-live` para mensajes dinámicos.
+
+---
+
+## 🧪 Prueba del ejercicio
+A continuación, se muestran los GIFs demostrando el funcionamiento del ejercicio:
+
+## 1. Pulsar varias letras en el teclado en pantalla: se deshabilitan, revelan aciertos y contabilizan fallos.
+
+![Demostración del Quiz cronometrado](ej2/foto1.gif)
+
+## 2. Usar el teclado físico (por ejemplo, A, E, Ñ) y verificar que actúa igual que el teclado en pantalla.
+
+![Demostración del Quiz cronometrado](ej2/foto2.gif)
+
+## 3.Forzar fallos para ver cómo disminuyen las vidas y aparecen, paso a paso, las partes del muñeco.
+
+![Demostración del Quiz cronometrado](ej2/foto3.gif)
+
+## 4. Completar la palabra y comprobar el mensaje de victoria y el bloqueo del teclado.
+
+![Demostración del Quiz cronometrado](ej2/foto4.gif)
+
+## 5. Agotar todas las vidas y comprobar el mensaje de derrota y el bloqueo del teclado.
+
+![Demostración del Quiz cronometrado](ej2/foto5.gif)
+
+## 6. Pulsar “Reiniciar” y verificar que se carga una nueva palabra y se limpia el estado.
+
+![Demostración del Quiz cronometrado](ej2/foto6.gif)
+
+
+
+

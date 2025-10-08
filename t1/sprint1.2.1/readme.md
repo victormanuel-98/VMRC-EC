@@ -36,18 +36,24 @@ Al finalizar el quiz, se muestra un **resumen con la puntuación final** y un bo
 ## 🧪 Prueba del ejercicio
 A continuación, se muestran los GIFs demostrando el funcionamiento del ejercicio:
 
-1. Seleccionar la opción correcta y verificar que aparece el mensaje "Correcto" y se avanza a la siguiente pregunta.
+## 1. Seleccionar la opción correcta y verificar que aparece el mensaje "Correcto" y se avanza a la siguiente pregunta.
+
 ![Demostración del Quiz cronometrado](ej1/foto1.gif)
 
-2. Seleccionar una opción incorrecta y verificar que aparece “Incorrecto” con marcado visual, antes de avanzar.
+## 2. Seleccionar una opción incorrecta y verificar que aparece “Incorrecto” con marcado visual, antes de avanzar.
+
 ![Demostración del Quiz cronometrado](ej1/foto2.gif)
 
-3. No seleccionar nada y dejar que el tiempo llegue a 0; verificar “Tiempo agotado” y el avance automático.
+## 3. No seleccionar nada y dejar que el tiempo llegue a 0; verificar “Tiempo agotado” y el avance automático.
+
 ![Demostración del Quiz cronometrado](ej1/foto3.gif)
 
-4. Confirmar que la barra de progreso se reduce de lleno a vacío sincronizada con el contador (p. ej., de 10 a 0).
+## 4. Confirmar que la barra de progreso se reduce de lleno a vacío sincronizada con el contador (p. ej., de 10 a 0).
+
 ![Demostración del Quiz cronometrado](ej1/foto4.gif)
 
-5. Completar todas las preguntas y comprobar que se muestra la puntuación final y que el botón “Reiniciar” reinicia el quiz.
+## 5. Completar todas las preguntas y comprobar que se muestra la puntuación final y que el botón “Reiniciar” reinicia el quiz.
+
 ![Demostración del Quiz cronometrado](ej1/foto5.gif)
+
 

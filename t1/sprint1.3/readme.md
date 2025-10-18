@@ -43,7 +43,57 @@ Devuelve un array con los **nombres de los estudiantes que aprobaron todas las m
 Cada función se ejecuta al pulsar su respectivo botón en el HTML.  
 El resultado aparece formateado en pantalla.
 
+--------------------------------------------------------------------------------------------
+
+# 📌 Ejercicio 2 – PokeAPI
+**Sprint 3 – Entorno Cliente (2º DAW)**
+
+Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y mostrar información sobre Pokémon de forma dinámica y visual.
+
+---
+
+## ✅ 1. Funcionalidades implementadas
+
+### 🔹 1. Buscar Pokémon
+- Introducir el nombre de un Pokémon.
+- Muestra:
+  - Nombre e ID
+  - Tipos
+  - Imagen oficial
+- Incluye manejo de errores si el Pokémon no existe o si el input está vacío.
+
+---
+
+### 🔹 2. Comparar Pokémon
+- Introducir dos Pokémon y comparar sus estadísticas base.
+- Se muestra:
+  - Imagen de ambos Pokémon (a los lados de la tabla)
+  - Tabla comparativa de estadísticas
+  - Suma total de stats
+  - Ganador o “Empate”
+- Todo el contenido aparece centrado y bien estructurado.
+
+---
+
+### 🔹 3. Cadena Evolutiva + Habilidades
+- Introducir un Pokémon y mostrar **toda su cadena evolutiva**.
+- Cada evolución incluye:
+  - Imagen oficial
+  - Nombre
+  - Habilidades
+- Las evoluciones se muestran **en horizontal** (no en columna).
+- Si el Pokémon no tiene evoluciones, se muestra un mensaje informativo.
+
+---
+
+## 📂 2. Estructura del proyecto
+
+----------------------------------------------------------------------------------------------------
+
+
+
 Ejemplo de prueba:
 ```js
 console.log(estudiantesDestacadosPorAsignatura(estudiantes, "matematicas"));
 // Esperado: [{nombre: "Carmen"}, {nombre: "Alejandro"}, {nombre: "Ana"}]
+

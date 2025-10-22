@@ -219,11 +219,9 @@ Este ejercicio utiliza JavaScript, PHP y MySQL para implementar un **formulario 
 
 Este ejercicio extiende la funcionalidad del sistema "Party Finder" permitiendo **gestión avanzada de parties**, incluyendo visualizar parties, añadir y remover miembros respetando roles y límites de la party.
 
----
-
 ## ✅ 1. Funcionalidades implementadas + gifs correspondientes
 
-### 🔹 1. Visualización de parties creadas
+### 🔹 1. Visualización de parties creadas y añadir miembros a una party
 - Se muestra una lista de todas las parties creadas con los siguientes campos:
   - Party ID
   - Creator ID
@@ -232,12 +230,6 @@ Este ejercicio extiende la funcionalidad del sistema "Party Finder" permitiendo 
   - Item Level Cap
   - Número de miembros
 - Los datos se cargan desde la base de datos mediante la API correspondiente.
-
-![Demostración Prueba](ejercicio5/ej5gifs/gif1.gif)
-
----
-
-### 🔹 2. Añadir miembro a una party
 - Hacer clic en **Add Member** abre un modal para seleccionar:
   - User ID (debe existir en `guild_members`)
   - Party Role (TANK, HEALER, DAMAGE, SUPPORT)
@@ -246,36 +238,28 @@ Este ejercicio extiende la funcionalidad del sistema "Party Finder" permitiendo 
   - El rol debe estar disponible según el tamaño de la party.
 - Al guardar, el miembro se añade a la party y se actualiza el número de miembros.
 
-![Demostración Prueba](ejercicio5/ej5gifs/gif2.gif)
+![Demostración Prueba](ejercicio5/ej5gifs/gif1.gif)
 
----
-
-### 🔹 3. Validación de roles al añadir miembro
+### 🔹 2. Validación de roles al añadir miembro
 - Intentar añadir un miembro con un rol ya ocupado en la party.
 - Resultado esperado: muestra un mensaje de error indicando que el rol ya está cubierto y no permite añadir al miembro.
 
-![Demostración Prueba](ejercicio5/ej5gifs/gif3.gif)
+![Demostración Prueba](ejercicio5/ej5gifs/gif2.gif)
 
----
-
-### 🔹 4. Remover miembro de una party
+### 🔹 3. Remover miembro de una party
 - Hacer clic en **Remove Member** para un miembro existente.
 - Validaciones:
   - No se puede remover al creador de la party.
   - Solo se pueden remover miembros existentes.
 - Al eliminar, se actualiza la lista y el número de miembros.
 
-![Demostración Prueba](ejercicio5/ej5gifs/gif4.gif)
+![Demostración Prueba](ejercicio5/ej5gifs/gif3.gif)
 
----
-
-### 🔹 5. Validación de límite de miembros
+### 🔹 4. Validación de límite de miembros
 - Intentar añadir más miembros que los permitidos por el Party Size.
 - Resultado esperado: muestra un mensaje de error indicando que la party está llena y no permite añadir más miembros.
 
-![Demostración Prueba](ejercicio5/ej5gifs/gif5.gif)
-
----
+![Demostración Prueba](ejercicio5/ej5gifs/gif4.gif)
 
 ## ⚙ Tecnologías utilizadas
 - HTML5 / CSS3  
@@ -289,6 +273,7 @@ Este ejercicio extiende la funcionalidad del sistema "Party Finder" permitiendo 
 ## 👨‍💻 Autor
 **Victor Ridao Chaves**  
 Curso: 2º DAW – Asignatura: Entorno Cliente
+
 
 
 

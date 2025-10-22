@@ -49,21 +49,27 @@ Devuelve un array con los **nombres de los estudiantes que aprobaron todas las m
 
 Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y mostrar información sobre Pokémon de forma dinámica y visual.
 
----
-
-## ✅ 1. Funcionalidades implementadas
+## ✅ 1. Funcionalidades implementadas + gifs correspondientes
 
 ### 🔹 1. Buscar Pokémon
-- Introducir el nombre de un Pokémon.
+- Introducir el nombre de un Pokémon (Pikachu y Charizard).
 - Muestra:
   - Nombre e ID
-  - Tipos
+  - Tipo elemental
   - Imagen oficial
 - Incluye manejo de errores si el Pokémon no existe o si el input está vacío.
 
----
+![Demostración Prueba](ejercicio2/ej2gifs/gif1.gif)
 
-### 🔹 2. Comparar Pokémon
+### 🔹 2. Pokémon falso
+- Comprobar si el Pokémon existe al introducir un nombre erróneo (fakepokemon).
+- Se muestra:
+  - Alerta de Pokémon no encontrado.
+- Todo el contenido aparece centrado y bien estructurado.
+
+![Demostración Prueba](ejercicio2/ej2gifs/gif2.gif)
+
+### 🔹 3. Comparar Pokémon
 - Introducir dos Pokémon y comparar sus estadísticas base.
 - Se muestra:
   - Imagen de ambos Pokémon (a los lados de la tabla)
@@ -72,7 +78,7 @@ Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y m
   - Ganador o “Empate”
 - Todo el contenido aparece centrado y bien estructurado.
 
----
+![Demostración Prueba](ejercicio1/ej1gifs/gifs5-8.gif)
 
 ### 🔹 3. Cadena Evolutiva + Habilidades
 - Introducir un Pokémon y mostrar **toda su cadena evolutiva**.
@@ -83,18 +89,11 @@ Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y m
 - Las evoluciones se muestran **en horizontal** (no en columna).
 - Si el Pokémon no tiene evoluciones, se muestra un mensaje informativo.
 
+![Demostración Prueba](ejercicio1/ej1gifs/gifs5-8.gif)
+
 ---
 
-## 📂 2. Estructura del proyecto
 
-----------------------------------------------------------------------------------------------------
-
-
-
-Ejemplo de prueba:
-```js
-console.log(estudiantesDestacadosPorAsignatura(estudiantes, "matematicas"));
-// Esperado: [{nombre: "Carmen"}, {nombre: "Alejandro"}, {nombre: "Ana"}]
 
 
 

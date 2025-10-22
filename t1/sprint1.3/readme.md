@@ -26,7 +26,6 @@ Aumenta todas las notas de los estudiantes con beca en un **10% (máximo 10).**
 Filtra los estudiantes de una ciudad y los ordena **descendentemente** por la nota en una asignatura.
 
 ![Demostración Prueba](ejercicio1/ej1gifs/gifs1-4.gif)
--------------------------------------------------------------------------------------------------------------
 
 ### 5️⃣ Estudiantes Sin Beca por Ciudad
 Devuelve la **cantidad de estudiantes sin beca** en una ciudad.
@@ -78,7 +77,7 @@ Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y m
   - Ganador o “Empate”
 - Todo el contenido aparece centrado y bien estructurado.
 
-![Demostración Prueba](ejercicio1/ej1gifs/gifs5-8.gif)
+![Demostración Prueba](ejercicio2/ej2gifs/gif3.gif)
 
 ### 🔹 3. Cadena Evolutiva + Habilidades
 - Introducir un Pokémon y mostrar **toda su cadena evolutiva**.
@@ -89,9 +88,10 @@ Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y m
 - Las evoluciones se muestran **en horizontal** (no en columna).
 - Si el Pokémon no tiene evoluciones, se muestra un mensaje informativo.
 
-![Demostración Prueba](ejercicio1/ej1gifs/gifs5-8.gif)
+![Demostración Prueba](ejercicio2/ej2gifs/gif4.gif)
 
 ---
+
 
 
 

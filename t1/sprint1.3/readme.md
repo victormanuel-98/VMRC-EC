@@ -113,7 +113,7 @@ Estos han quedado reflejados en los gifs.
   - Guild Role
   - Botones de Editar y Eliminar
 
-![Demostración Prueba](ejercicio3/ej3gifs/capturaimagen.png)
+![Demostración Prueba](ejercicio3/ej3gifs/capturainicial.png)
 
 ---
 
@@ -177,6 +177,7 @@ Estos han quedado reflejados en los gifs.
 ## 👨‍💻 Autor
 **Victor Ridao Chaves**  
 Curso: 2º DAW – Asignatura: Entorno Cliente
+
 
 
 

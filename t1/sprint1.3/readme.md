@@ -15,7 +15,7 @@ Este ejercicio consiste en trabajar con un conjunto de estudiantes representados
 ### 1️⃣ Estudiantes Destacados por Asignatura
 Muestra los **3 estudiantes con mejores notas** en una asignatura dada.
 
-![Demostración Prueba 1](ejercicio1/ej1/gif1.gif)
+![Demostración Prueba 1](ejercicio1/ej1gifs/gif1.gif)
 
 
 ### 2️⃣ Asignatura con Menor Rendimiento
@@ -98,6 +98,7 @@ Ejemplo de prueba:
 ```js
 console.log(estudiantesDestacadosPorAsignatura(estudiantes, "matematicas"));
 // Esperado: [{nombre: "Carmen"}, {nombre: "Alejandro"}, {nombre: "Ana"}]
+
 
 
 

@@ -11,12 +11,10 @@ Este ejercicio consiste en trabajar con un conjunto de estudiantes representados
 ---
 
 ## 🧩 Funcionalidades
+A continuación se muestran dos gifs en los que se incluyen todos las pruebas a realizar para el ejercicio.
 
 ### 1️⃣ Estudiantes Destacados por Asignatura
 Muestra los **3 estudiantes con mejores notas** en una asignatura dada.
-
-![Demostración Prueba 1](ejercicio1/ej1gifs/gifs1-4.gif)
-
 
 ### 2️⃣ Asignatura con Menor Rendimiento
 Calcula la **asignatura con el promedio más bajo** entre todos los estudiantes.
@@ -26,6 +24,9 @@ Aumenta todas las notas de los estudiantes con beca en un **10% (máximo 10).**
 
 ### 4️⃣ Filtrado por Ciudad y Asignatura
 Filtra los estudiantes de una ciudad y los ordena **descendentemente** por la nota en una asignatura.
+
+![Demostración Prueba](ejercicio1/ej1gifs/gifs1-4.gif)
+-------------------------------------------------------------------------------------------------------------
 
 ### 5️⃣ Estudiantes Sin Beca por Ciudad
 Devuelve la **cantidad de estudiantes sin beca** en una ciudad.
@@ -39,11 +40,7 @@ Muestra los **2 estudiantes con mejor promedio general** entre todas las asignat
 ### 8️⃣ Estudiantes con Todas las Materias Aprobadas
 Devuelve un array con los **nombres de los estudiantes que aprobaron todas las materias** (nota ≥ 5).
 
----
-
-## 🧪 Pruebas
-Cada función se ejecuta al pulsar su respectivo botón en el HTML.  
-El resultado aparece formateado en pantalla.
+![Demostración Prueba](ejercicio1/ej1gifs/gifs5-8.gif)
 
 --------------------------------------------------------------------------------------------
 
@@ -98,6 +95,7 @@ Ejemplo de prueba:
 ```js
 console.log(estudiantesDestacadosPorAsignatura(estudiantes, "matematicas"));
 // Esperado: [{nombre: "Carmen"}, {nombre: "Alejandro"}, {nombre: "Ana"}]
+
 
 
 

@@ -90,7 +90,95 @@ Este ejercicio utiliza JavaScript y la API pública **PokeAPI** para obtener y m
 
 ![Demostración Prueba](ejercicio2/ej2gifs/gif4.gif)
 
+-----------------------------------------------------------------------------------------------------
+
+# 📌 Ejercicio 3 – Guild Members Management
+**Sprint 3 – Entorno Cliente (2º DAW)**
+
+Este ejercicio utiliza JavaScript, PHP y MySQL para implementar un **CRUD completo** (Create, Read, Update, Delete) de miembros de una guild, utilizando un modal para añadir y editar miembros, y mostrando los datos en una tabla dinámica. Cabe mencionar que se ha tenido que ejecutar mediante el uso de Apache y MySQL desde XAMPP para poder crear la base de datos y almacenar los datos.
+Estos han quedado reflejados en los gifs.
+
 ---
+
+## ✅ 1. Funcionalidades implementadas + gifs correspondientes
+
+### 🔹 1. Visualización de miembros
+- Al abrir la página, se cargan todos los miembros desde la base de datos (`guild_db`) usando `getMembers.php`.
+- Se muestra:
+  - User ID
+  - Username
+  - Level
+  - Item Level
+  - Character Role
+  - Guild Role
+  - Botones de Editar y Eliminar
+
+![Demostración Prueba](ejercicio3/ej3gifs/capturaimagen.png)
+
+---
+
+### 🔹 2. Añadir nuevo miembro
+- Hacer clic en **Add New Member** abre un modal con el formulario.
+- Campos obligatorios:
+  - user_id, username, level, ilvl, character_role, guild_role
+  - main_archetype, secondary_archetype, email, notify_email
+- Validaciones:
+  - user_id único
+  - Email válido
+- Al guardar, se añade el miembro en la tabla y en la base de datos mediante `addMember.php`.
+
+![Demostración Prueba](ejercicio3/ej3gifs/gif1.gif)
+
+---
+
+### 🔹 3. Validaciones de formulario
+- Probar con campos vacíos o email inválido muestra mensaje de error.
+- Probar con un user_id ya existente impide la duplicación y muestra mensaje de error.
+
+![Demostración Prueba](ejercicio3/ej3gifs/gif3.gif)
+
+---
+
+### 🔹 4. Editar miembro
+- Hacer clic en **Edit** en un miembro abre el modal con los datos precargados.
+- Se pueden modificar:
+  - level, ilvl, character_role, guild_role, main/secondary archetype, email, notify_email
+- Al guardar, se actualizan los datos en la tabla y en la base de datos mediante `updateMembers.php`.
+
+![Demostración Prueba](ejercicio3/ej3gifs/gif4.gif)
+
+---
+
+### 🔹 5. Eliminar miembro
+- Hacer clic en **Delete** y confirmar elimina el miembro.
+- Los cambios se reflejan en la tabla y en la base de datos mediante `deleteMember.php`.
+
+![Demostración Prueba](ejercicio3/ej3gifs/gif5.gif)
+
+---
+
+### 🔹 6. Comportamiento del modal
+- Cerrar el modal sin guardar limpia los campos.
+- Si se edita un miembro y se cierra sin guardar, los datos originales permanecen intactos.
+
+![Demostración Prueba](ejercicio3/ej3gifs/gif6.gif)
+
+---
+
+## ⚙ Tecnologías utilizadas
+- HTML5 / CSS3  
+- JavaScript (ES6)  
+- PHP 7+  
+- MySQL / phpMyAdmin  
+- XAMPP como servidor local
+
+---
+
+## 👨‍💻 Autor
+**Victor Ridao Chaves**  
+Curso: 2º DAW – Asignatura: Entorno Cliente
+
+
 
 
 

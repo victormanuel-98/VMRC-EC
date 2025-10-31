@@ -44,4 +44,4 @@ public/
 ### 5️⃣ Evidencia del funcionamiento
 A continuación se muestran las capturas/GIFs que documentan cada prueba:
 
-![Arranque del proyecto](sprint1.4\ejercicios\gifs\gif1.gif)
+![Arranque del proyecto](t1\sprint1.4\ejercicios\gifs\gif1.gif)

@@ -44,11 +44,5 @@ public/
 ### 5️⃣ Evidencia del funcionamiento
 A continuación se muestran las capturas/GIFs que documentan cada prueba:
 
-#### 📸 Arranque del proyecto
-![Arranque del proyecto](ruta/a/tu/gif-o-imagen.gif)
-
-#### 🌐 Vista en el navegador con identidad del chatbot
-![Vista del chatbot](ruta/a/tu/gif-o-imagen.gif)
-
-#### 📂 Estructura de carpetas preparada
-![Estructura de carpetas](ruta/a/tu/gif-o-imagen.gif)
+### Arranque del proyecto + estructura de carpetas
+![Arranque del proyecto](sprint1.4\ejercicios\gifs.gif)

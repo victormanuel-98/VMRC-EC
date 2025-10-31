@@ -27,6 +27,7 @@
 ### 4️⃣ Preparación de la estructura base
 Estructura de carpetas creada para organizar el proyecto:
 
+```
 src/
 ├── App.jsx
 ├── main.jsx
@@ -35,6 +36,8 @@ src/
 ├── styles/
 public/
 └── assets/
+
+```
 
 ## También se añaden los ".gitkeep" opcionales para mantener carpetas vacías en Git.
 

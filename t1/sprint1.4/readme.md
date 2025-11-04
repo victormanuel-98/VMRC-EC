@@ -219,6 +219,65 @@ El chatbot (con su imagen y ventana de chat) se renderiza correctamente desde el
 
 ![Chatbot con zona de escritura](./ejercicios/gifs/gif3.gif)
 
+# Actividad 4: Componentes Mínimos del Chatbot
+
+## Historia de usuario
+
+**Como** usuario que va a interactuar con el chatbot dentro de la aplicación,  
+**quiero** disponer de una interfaz de chat que se parezca a una experiencia real (historial de mensajes, zona de escritura y área de respuesta del asistente),  
+**para** poder conversar con el chatbot dentro del navegador de forma clara, ordenada y comprensible.
+
+---
+
+## Objetivos de la actividad
+
+* Implementar la ventana principal del chat dentro de la aplicación.
+* Mostrar un historial de mensajes claramente diferenciado entre usuario y asistente.
+* Mantener un área de entrada de texto funcional para enviar mensajes.
+* Simular respuestas del asistente para probar la interacción.
+* Mostrar un indicador visual de “pensando…”.
+* Aplicar identidad visual propia (avatar, colores, tipografía) al chat.
+
+---
+
+## Detalle de tareas
+
+### 💬 Tarea 1: Ventana principal del chat
+Se ha creado `ChatWindow.jsx` como contenedor de la conversación.  
+El chat se integra dentro de la app y está claramente identificado como “Chatbot” con colores y diseño propios.
+
+### 🗂 Tarea 2: Historial de mensajes
+* `MessageList.jsx` muestra todos los mensajes en orden cronológico.  
+* Mensajes del usuario y del bot se diferencian visualmente mediante colores y avatar.  
+* Cada mensaje se representa como una burbuja claramente separada.
+
+### ⌨️ Tarea 3: Área de entrada de mensaje
+* `MessageInput.jsx` contiene un campo de texto y botón “Enviar”.  
+* Siempre accesible en la parte inferior de la ventana del chat.  
+* Permite enviar mensajes con Enter o pulsando el botón.
+
+### 🤖 Tarea 4: Respuesta simulada del asistente
+* Cada mensaje del usuario provoca una respuesta del bot simulada.  
+* Las respuestas se generan de manera aleatoria para simular interacción real.
+
+### ⏳ Tarea 5: Indicador de respuesta / “pensando…”
+* Se muestra un mensaje temporal “Pensando...” antes de la respuesta del bot.  
+* Indica que el asistente está procesando el mensaje.
+
+### 👁 Tarea 6: Identidad visual del asistente
+* Se utiliza el avatar `shodan.gif` y colores verdes y negros inspirados en estética retro.  
+* Tipografía, bordes y burbujas están adaptados para que la experiencia sea clara y reconocible.
+
+---
+
+## Prueba funcional
+
+![Chatbot interactuando](./ejercicios/gifs/gif4.gif)
+
+
+
+
+
 
 
 

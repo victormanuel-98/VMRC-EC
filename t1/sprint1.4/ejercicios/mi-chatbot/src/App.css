@@ -96,8 +96,10 @@ h1 {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  max-height: 400px;
   gap: 10px;
   scroll-behavior: smooth;
+  margin-bottom: 10px;
 }
 
 /* Burbujas de usuario y bot */
@@ -127,11 +129,12 @@ h1 {
 
 /* Avatar del bot */
 .bot-avatar {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   border: 2px solid #00ff55;
+  margin-right: 10px;
   box-shadow: 0 0 10px rgba(0, 255, 85, 0.6);
   animation: pulse-glow 2.5s infinite ease-in-out;
 }
@@ -161,7 +164,7 @@ h1 {
 }
 
 .message-input button:hover {
-  background-color: #00ffaa;
+  background-color: #0400ff;
 }
 
 /* --- Responsive --- */
@@ -182,4 +185,22 @@ h1 {
   .chat-window {
     height: 300px;
   }
+
+  .pokemon-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-top: 5px;
+    border: 1px solid #ffae00;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .pokemon-img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+
 }

@@ -12,7 +12,7 @@ function App() {
           className="chatbot-avatar"
         />
         <h1>S.H.O.D.A.N.</h1>
-        <p className="slogan">Puedo ver todo lo que haces...</p>
+        <p className="slogan">Tu confiable asistente personal para ayudarte en todo lo que necesites</p>
       </div>
 
       {/* Zona del chatbot */}

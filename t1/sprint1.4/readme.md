@@ -103,5 +103,122 @@ A continuación se muestran las capturas/GIFs que documentan la actividad:
 
 ![Identidad visual SHODAN](./ejercicios/gifs/gif2.gif)
 
+------------------------------------------------------------------------------------------
+
+# Actividad 3: Estructura del Proyecto y Modularización
+
+## Historia de usuario
+
+**Como** estudiante que está profesionalizando su chatbot,
+**quiero** organizar mi proyecto React en una estructura clara con carpetas separadas para componentes, estilos, servicios y recursos,
+**para** poder seguir creciendo (chat, conexión a APIs, historial, etc.) sin que el código se vuelva caótico.
+
+---
+
+## 🧠 Objetivos de la actividad
+
+* Organizar el proyecto por responsabilidad (interfaz, estilos, servicios, recursos).
+* Aislar los componentes del chatbot dentro de su propia carpeta.
+* Preparar la carpeta `services/` para futuras llamadas a datos (POKEAPI).
+* Centralizar los estilos en una carpeta única.
+* Integrar toda la estructura dentro de la aplicación principal (`App.jsx`).
+
+---
+
+## 🗂️ Estructura final del proyecto
+
+```
+mi-chatbot/
+ ┣ 📂public
+ ┃ ┗ 📂assets
+ ┃   ┣ 📂images
+ ┃   ┃ ┗ 📂icons
+ ┃   ┗ 📂shodan
+ ┃       ┗ 📜shodan.gif
+ ┣ 📂src
+ ┃ ┣ 📂components
+ ┃ ┃ ┗ 📂Chatbot
+ ┃ ┃   ┣ 📜ChatWindow.jsx
+ ┃ ┃   ┣ 📜MessageList.jsx
+ ┃ ┃   ┗ 📜MessageInput.jsx
+ ┃ ┣ 📂services
+ ┃ ┃ ┗ 📜pokeapi.js
+ ┃ ┣ 📂styles
+ ┃ ┃ ┣ 📜layout.css
+ ┃ ┃ ┗ 📜chatbot.css
+ ┃ ┣ 📜App.jsx
+ ┃ ┣ 📜App.css
+ ┃ ┣ 📜index.css
+ ┃ ┗ 📜main.jsx
+ ┣ 📜vite.config.js
+ ┣ 📜package.json
+ ┗ 📜README.md
+```
+
+---
+
+## 🧱 Detalle de tareas
+
+### 📂 Tarea 1: Estructurar el proyecto por responsabilidad
+
+Se han creado carpetas específicas para cada responsabilidad:
+
+* `components/` → componentes visuales reutilizables.
+* `services/` → llamadas externas y futuras integraciones con APIs.
+* `styles/` → estilos globales y específicos del chatbot.
+* `public/assets/` → imágenes, íconos y recursos estáticos.
+
+---
+
+### 💬 Tarea 2: Aislar los componentes del chatbot
+
+Dentro de `components/Chatbot/` se separaron las siguientes piezas:
+
+* **ChatWindow.jsx** → Contenedor principal del chat.
+* **MessageList.jsx** → Muestra la conversación.
+* **MessageInput.jsx** → Campo de entrada del usuario.
+
+Esto permite ampliar o modificar el comportamiento del chat sin afectar el resto de la aplicación.
+
+---
+
+### 🛰️ Tarea 3: Preparar carpeta `services/`
+
+Se creó `services/pokeapi.js`, con la función preparada para futuras llamadas a la **POKEAPI**:
+
+```js
+// services/pokeapi.js
+export async function getPokemonData(name) {
+  console.log("Función getPokemonData preparada para futuras llamadas");
+}
+```
+
+---
+
+### 🎨 Tarea 4: Centralizar estilos
+
+Se unificaron los estilos en la carpeta `styles/`:
+
+* `layout.css` → estructura global de la aplicación.
+* `chatbot.css` → diseño y apariencia del chatbot (colores, fondo, tipografía, avatar SHODAN, etc.).
+
+Esto asegura coherencia visual y facilita modificaciones futuras.
+
+---
+
+### ⚙️ Tarea 5: Integrar todo en la aplicación raíz
+
+`App.jsx` actúa como el punto de unión entre los componentes y estilos.
+El chatbot (con su imagen y ventana de chat) se renderiza correctamente desde el navegador y mantiene su identidad visual.
+
+---
+
+##Prueba funcional
+
+### 🎥 GIF de comprobación
+
+![Chatbot con zona de escritura](./ejercicios/gifs/gif3.gif)
+
+
 
 

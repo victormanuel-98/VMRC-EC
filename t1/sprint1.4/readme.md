@@ -101,7 +101,7 @@ Verificar que la aplicación muestra correctamente la nueva identidad visual sin
 
 A continuación se muestran las capturas/GIFs que documentan la actividad:
 
-![Identidad visual SHODAN](./ejercicios/gifs/gif2(1).gif)
+![Identidad visual SHODAN](./ejercicios/gifs/gif2 (1).gif)
 
 
 

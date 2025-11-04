@@ -1,5 +1,8 @@
-import './App.css'
-import Chatbot from './components/Chatbot'
+import React from "react";
+import "./styles/layout.css";
+import "./App.css";  // ✅ sin la carpeta styles
+import ChatWindow from "./components/Chatbot/ChatWindow.jsx";
+
 
 function App() {
   return (
@@ -12,11 +15,13 @@ function App() {
           className="chatbot-avatar"
         />
         <h1>S.H.O.D.A.N.</h1>
-        <p className="slogan">Tu confiable asistente personal para ayudarte en todo lo que necesites</p>
+        <p className="slogan">
+          Tu confiable asistente personal para ayudarte en todo lo que necesites
+        </p>
       </div>
 
       {/* Zona del chatbot */}
-      <Chatbot />
+      <ChatWindow />
     </div>
   )
 }

@@ -1,0 +1,54 @@
+.chat-window {
+    background-color: #1a1a1a;
+    color: white;
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.message-list {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message-input {
+    display: flex;
+    border-top: 1px solid #333;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #222;
+    color: white;
+}
+
+.message-input button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* src/components/Chatbot.css */
+.chatbot {
+    border: 2px solid #00fffb;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: #000000;
+    text-align: center;
+}
+.chatbot h2 {
+    color: #ff0000;
+    margin-bottom: 10px;
+}

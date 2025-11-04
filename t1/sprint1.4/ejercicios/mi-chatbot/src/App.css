@@ -12,7 +12,6 @@ body,
 .app {
   display: flex;
   flex-direction: column;
-  /* Todo en columna */
   align-items: center;
   /* Centra horizontalmente */
   justify-content: center;
@@ -21,7 +20,6 @@ body,
   width: 100%;
   height: 100%;
   background-color: #000;
-  /* Fondo oscuro tipo SHODAN */
   color: #00ff55;
   font-family: 'Orbitron', sans-serif;
   box-sizing: border-box;
@@ -35,14 +33,31 @@ body,
   justify-content: center;
 }
 
-/* GIF centrado */
+/* GIF circular y centrado */
 .chatbot-avatar {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px #00ff55;
+  border: 3px solid #00ff55;
+  box-shadow: 0 0 15px rgba(0, 255, 85, 0.6);
+  background-color: black;
+  display: block;
+  overflow: hidden;
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+/* Animación de pulso verde */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(0, 255, 85, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 85, 0.9);
+  }
 }
 
 /* Nombre y eslogan */

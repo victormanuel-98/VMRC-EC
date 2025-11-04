@@ -1,22 +1,9 @@
-/* Reset y ocupación total */
+/* --- Reset y ocupación total --- */
 html,
 body,
 #root {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Contenedor principal */
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Centra horizontalmente */
-  justify-content: center;
-  /* Centra verticalmente */
-  text-align: center;
   width: 100%;
   height: 100%;
   background-color: #000;
@@ -25,22 +12,34 @@ body,
   box-sizing: border-box;
 }
 
-/* Cabecera del chatbot */
+/* --- Contenedor principal de la app --- */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- Cabecera del chatbot --- */
 .chatbot-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
 /* GIF circular y centrado */
 .chatbot-avatar {
-  width: 220px;
-  height: 220px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #00ff55;
-  box-shadow: 0 0 15px rgba(0, 255, 85, 0.6);
+  box-shadow: 0 0 10px rgba(0, 255, 85, 0.6);
   background-color: black;
   display: block;
   overflow: hidden;
@@ -52,45 +51,124 @@ body,
 
   0%,
   100% {
-    box-shadow: 0 0 15px rgba(0, 255, 85, 0.6);
+    box-shadow: 0 0 10px rgba(0, 255, 85, 0.6);
   }
 
   50% {
-    box-shadow: 0 0 25px rgba(0, 255, 85, 0.9);
+    box-shadow: 0 0 20px rgba(0, 255, 85, 0.9);
   }
 }
 
 /* Nombre y eslogan */
 h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: #00ff51;
+  font-size: 2.5rem;
+  margin: 10px 0 5px 0;
+  color: #00ff55;
 }
 
 .slogan {
   font-style: italic;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #b2f7ef;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-/* Zona del chatbot */
-.chatbot {
-  background-color: rgba(50, 10, 10, 0.9);
-  border: 2px solid #00ff55;
-  border-radius: 10px;
-  padding: 1.5rem;
+/* --- Contenedor de la ventana del chatbot --- */
+.chat-window {
+  display: flex;
+  flex-direction: column;
   width: 60%;
   max-width: 700px;
-  min-height: 200px;
+  height: 300px;
+  /* Altura fija */
+  border: 2px solid #00ff55;
+  border-radius: 10px;
+  background-color: rgba(50, 10, 10, 0.9);
+  padding: 10px;
   box-shadow: 0 0 15px #00ff55;
 }
 
-/* Responsive */
+/* Historial de mensajes */
+.message-list {
+  flex: 1;
+  /* Ocupa todo el espacio disponible excepto input */
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Burbujas de usuario y bot */
+.user-message {
+  align-self: flex-end;
+  background-color: #1a1aff;
+  /* Azul del usuario */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #1a1a1a;
+  color: #00ff55;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Avatar del bot */
+.bot-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ff55;
+  box-shadow: 0 0 10px rgba(0, 255, 85, 0.6);
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+/* Input de mensaje */
+.message-input {
+  display: flex;
+  gap: 10px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #00ff55;
+  background-color: black;
+  color: #00ff55;
+}
+
+.message-input button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #00ff55;
+  background-color: #000;
+  color: #00ff55;
+  cursor: pointer;
+}
+
+.message-input button:hover {
+  background-color: #00ffaa;
+}
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .chatbot-avatar {
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
   }
 
   h1 {
@@ -101,7 +179,7 @@ h1 {
     font-size: 1rem;
   }
 
-  .chatbot {
-    width: 90%;
+  .chat-window {
+    height: 300px;
   }
 }

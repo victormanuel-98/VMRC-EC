@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-function MessageInput() {
+function MessageInput({ onSendMessage }) {
     const [message, setMessage] = useState('')
 
     const handleSend = () => {
         if (message.trim()) {
-            alert(`Mensaje enviado: ${message}`)
+            onSendMessage(message)
             setMessage('')
         }
     }
@@ -17,6 +17,7 @@ function MessageInput() {
                 placeholder="Escribe tu mensaje..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
             />
             <button onClick={handleSend}>Enviar</button>
         </div>

@@ -46,3 +46,62 @@ A continuación se muestran las capturas/GIFs que documentan cada prueba:
 
 ![Arranque del proyecto](./ejercicios/gifs/gif1.gif)
 
+-------------------------------------------------------------------------------------------------
+
+# Actividad 2 – Personalización Visual del Chatbot
+
+## 🧠 Tareas
+
+### 🎨 Tarea 1: Identidad visual del chatbot
+
+Definición del nombre, eslogan y selección de imagen/logotipo para SHODAN.
+
+### 🖼 Tarea 2: Sustitución de elementos genéricos
+
+Eliminados todos los recursos visuales de React y reemplazados por los propios del chatbot.
+
+### 🧭 Tarea 3: Ajuste visual mínimo
+
+Adaptación de la interfaz para mostrar el nombre, imagen y eslogan del chatbot de forma centrada y limpia.
+
+### 🗂 Tarea 4: Organización de recursos gráficos
+
+Estructura final:
+
+```
+public/
+ └── assets/
+     ├── images/
+     │   └── shodan.gif
+     └── icons/
+         └── favicon.ico
+```
+
+### 📝 Tarea 5: Reflejar la identidad en la interfaz
+
+Se ha integrado el logotipo animado, el nombre “SHODAN” y el eslogan en la pantalla principal.
+También se añadió un **favicon personalizado** para reforzar la identidad del asistente.
+
+---
+
+## 🧪 Pruebas funcionales
+
+**Prueba:**
+Verificar que la aplicación muestra correctamente la nueva identidad visual sin elementos de React.
+
+**Resultado:**
+
+* La aplicación carga mostrando la identidad de SHODAN.
+* Logo, nombre y eslogan visibles.
+* Estructura modular y organizada según lo requerido.
+
+---
+
+## 5️⃣ Evidencia del funcionamiento
+
+A continuación se muestran las capturas/GIFs que documentan la actividad:
+
+![Identidad visual SHODAN](./ejercicios/gifs/gif2.gif)
+
+
+

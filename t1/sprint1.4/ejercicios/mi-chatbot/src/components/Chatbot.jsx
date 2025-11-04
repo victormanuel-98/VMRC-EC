@@ -4,8 +4,8 @@ import './Chatbot.css'
 function Chatbot() {
     return (
         <div className="chatbot">
-            <h2>🤖 Chatbot</h2>
-            <p>Aquí vive el chatbot, listo for you.</p>
+            <h2>ADVERTENCIA</h2>
+            <p>I.A en desarrollo, no podemos garantizar su seguridad</p>
         </div>
     )
 }

@@ -274,6 +274,160 @@ El chat se integra dentro de la app y está claramente identificado como “Chat
 
 ![Chatbot interactuando](./ejercicios/gifs/gif4.gif)
 
+---
+
+# Actividad 5: Búsqueda de Pokémon con POKEAPI desde el chatbot
+
+## Historia de usuario
+
+**Como** usuario que interactúa con el chatbot dentro de la aplicación,
+**quiero** poder preguntarle por un Pokémon escribiendo su nombre o número de la Pokédex nacional directamente en la ventana de chat,
+**para** que el chatbot me responda con información básica de ese Pokémon obtenida desde la POKEAPI, simulando así una utilidad práctica del asistente.
+
+---
+
+## 🧠 Objetivos de la actividad
+
+* Interpretar consultas de usuario con nombre o número de Pokémon.
+* Conectar con la POKEAPI y obtener información real de cada Pokémon.
+* Mostrar la información en el historial del chat como respuesta del asistente.
+* Manejar errores de red o Pokémon inexistentes sin romper la interfaz.
+* Mantener la estructura de proyecto coherente con actividades anteriores.
+
+---
+
+## 🧱 Detalle de tareas
+
+### 🔍 Tarea 1: Interpretación de la consulta del usuario
+
+El chatbot permite introducir cualquier nombre o número de Pokémon en el área de entrada. Ejemplos válidos:
+
+* `"bulbasaur"`
+* `"25"`
+
+La aplicación procesa automáticamente el valor ingresado como criterio de búsqueda.
+
+---
+
+### 🌐 Tarea 2: Consulta a la POKEAPI
+
+Se creó un servicio dedicado en `services/pokeapi.js` que gestiona las peticiones a la POKEAPI:
+
+```js
+// services/pokeapi.js
+export async function getPokemonData(query) {
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}`);
+        if (!response.ok) throw new Error("Pokémon no encontrado");
+        const data = await response.json();
+        return {
+            nombre: data.name,
+            numero: data.id,
+            tipo: data.types[0].type.name,
+            imagen: data.sprites.front_default
+        };
+    } catch (error) {
+        throw error;
+    }
+}
+```
+
+---
+
+### 🧾 Tarea 3: Formato de la respuesta del chatbot
+
+El chatbot muestra en el historial de mensajes la información más relevante del Pokémon:
+
+* Nombre
+* Número en la Pokédex
+* Tipo principal
+* Imagen (sprite)
+
+Ejemplo de mensaje en el chat:
+
+```
+Nombre: Pikachu
+Número: 25
+Tipo: electric
+```
+
+![Sprite de Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png)
+
+---
+
+### ❌ Tarea 4: Manejo de errores y Pokémon no encontrados
+
+Si el usuario introduce un nombre o número inválido, el chatbot responde con un mensaje claro en el historial:
+
+```
+No encuentro ese Pokémon. Por favor, verifica el nombre o número.
+```
+
+Esto mantiene la conversación sin romper la interfaz y permite continuar consultando otros Pokémon.
+
+---
+
+### 🔄 Tarea 5: Integración natural en el flujo de chat
+
+* El usuario escribe un mensaje → aparece en el historial como mensaje propio.
+* El asistente muestra indicador “Pensando...”.
+* Tras la respuesta, aparece un mensaje del asistente con los datos del Pokémon (o mensaje de error si no existe).
+* El historial mantiene todas las consultas anteriores ordenadas cronológicamente.
+
+---
+
+### 🧠 Tarea 6: Uso coherente de la estructura del proyecto
+
+La lógica de conversación y la lógica de datos están separadas:
+
+```
+src/
+ ├── components/
+ │   └── Chatbot/
+ │        ├── ChatWindow.jsx
+ │        ├── MessageList.jsx
+ │        └── MessageInput.jsx
+ ├── services/
+ │   └── pokeapi.js
+ ├── styles/
+ │   ├── chatbot.css
+ │   └── layout.css
+public/
+ └── assets/
+     ├── images/
+     └── icons/
+```
+
+Esto permite futuras integraciones sin afectar la interfaz ni la arquitectura general del proyecto.
+
+---
+
+## 🧪 Pruebas funcionales de la actividad
+
+### ✅ Prueba 1: Búsqueda por nombre + GIF
+
+* Introducir en el chat `"pikachu"`.
+* Verificar que el mensaje aparece en el historial.
+* Confirmar que el asistente responde con nombre, número, tipo y sprite del Pokémon.
+
+![Chatbot consulta Pokémon](./ejercicios/gifs/gif5.gif)
+
+### ✅ Prueba 2: Búsqueda por número de Pokédex + GIF
+
+* Introducir en el chat `"1"`, `"25"` o `"150"`.
+* Comprobar que se muestra la información correcta del Pokémon correspondiente.
+
+![Búsqueda por número](./ejercicios/gifs/gif6.gif)
+
+### ❌ Prueba 3: Manejo de error / Pokémon inexistente + GIF
+
+* Introducir un nombre inventado o número inválido.
+* Verificar que el chatbot devuelve un mensaje de error dentro del historial.
+* Confirmar que la interfaz sigue funcionando y se pueden realizar nuevas consultas.
+
+![Manejo de errores](./ejercicios/gifs/gif7.gif)
+
+
 
 
 

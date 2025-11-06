@@ -427,6 +427,27 @@ Esto permite futuras integraciones sin afectar la interfaz ni la arquitectura ge
 
 ![Manejo de errores](./ejercicios/gifs/gif7.gif)
 
+# Chatbot con IA Local (Qwen3 / LM Studio)
+
+Este proyecto integra **Qwen3-4B-Instruct-2507-GGUF** de **LM Studio** como inteligencia artificial local para un chatbot de Pokémon.
+
+## Características
+
+* Consulta datos de Pokémon desde la **PokeAPI**.
+* Si no se encuentra un Pokémon, la IA genera una respuesta usando **Qwen3 local**.
+* Integración simple con **React + Vite** mediante `fetch` al endpoint `/v1/chat/completions`.
+
+## Uso
+
+* Escribe el nombre de un Pokémon en el chat.
+* Si no existe, la IA generará una respuesta inteligente.
+* Se hace prueba preguntándole sobre un anime. Exagera un poco en la extensión de las respuestas.
+
+## Gif de demostración
+
+![Demo del Chatbot](./ejercicios/gifs/gif8.gif)
+
+
 
 
 

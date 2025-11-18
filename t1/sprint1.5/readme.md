@@ -136,7 +136,7 @@ _Añadir aquí el GIF que muestre:_
 
 ---
 
-## 🔒 Actividad 3: Rutas protegidas y login
+## Actividad 3: Rutas protegidas y login
 - Login simulado
 - Rutas protegidas: Chat, Conversaciones, Pokédex, Ajustes
 - Redirecciones automáticas según sesión
@@ -148,5 +148,8 @@ _Añadir aquí el GIF que muestre:_
 
 **GIF login/logout:**  
 ![Login/Logout](./ejercicios/gifs/act3.gif)
+
+---
+
 
 

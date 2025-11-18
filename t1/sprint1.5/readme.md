@@ -72,7 +72,8 @@ Se han definido las rutas principales de la aplicación:
 
 ## GIF de recorrido completo
 
-_Añadir aquí el GIF que muestre la navegación entre todas las vistas:_
-
 ![Recorrido de navegación](./ejercicios/gifs/act1.gif)
+
+---
+
 

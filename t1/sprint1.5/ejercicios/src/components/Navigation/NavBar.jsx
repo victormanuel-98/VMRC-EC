@@ -1,17 +1,23 @@
 // src/components/Navigation/NavBar.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "../../styles/layout.css";
 
 const NavBar = () => {
     return (
-        <nav className="nav-bar">
-            <ul>
-                <li><Link to="/">Chat</Link></li>
-                <li><Link to="/conversaciones">Conversaciones</Link></li>
-                <li><Link to="/conversacion/1">Conversación</Link></li>
-                <li><Link to="/pokedex">Pokédex</Link></li>
-                <li><Link to="/ajustes">Ajustes</Link></li>
-            </ul>
+        <nav className="navbar">
+            <NavLink to="/" end>
+                Chat
+            </NavLink>
+            <NavLink to="/conversaciones">
+                Conversaciones
+            </NavLink>
+            <NavLink to="/pokedex">
+                Pokédex
+            </NavLink>
+            <NavLink to="/ajustes">
+                Ajustes
+            </NavLink>
         </nav>
     );
 };

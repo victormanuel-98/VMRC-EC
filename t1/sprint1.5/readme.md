@@ -76,4 +76,63 @@ Se han definido las rutas principales de la aplicación:
 
 ---
 
+# Actividad 2 – Enrutado con parámetros, queries y estados
+
+## Historia de usuario
+**Como** persona que comparte enlaces,  
+**quiero** que la URL refleje la vista actual y sus parámetros (id de conversación, filtros),  
+**para** abrir directamente contenido concreto.
+
+---
+
+## Tareas realizadas
+
+### Parámetros de ruta
+- `ConversationView` acepta un `id` en la URL:  
+  Ejemplo: `/conversacion/2`  
+- Esto permite abrir directamente la conversación deseada.
+
+### Query params funcionales
+- `ConversationsView` interpreta:
+  - `?q=` → búsqueda por nombre de conversación
+  - `?sort=` → orden (`asc` / `desc`)
+- Cambiar los controles de búsqueda/orden **actualiza la URL**.
+- Abrir la URL directamente restaura los valores de los controles.
+
+### Sincronía URL ⇄ Estado
+- Los filtros y orden permanecen después de recargar la página.
+- La URL refleja siempre el estado actual de los controles.
+
+---
+
+## Estructura de carpetas relevante
+```
+src/
+├── components/
+│ └── Views/
+│ ├── ConversationsView.jsx
+│ └── ConversationView.jsx
+└── services/
+└── url-state.md
+```
+
+---
+
+## Pruebas funcionales realizadas
+- ✅ Escribir/limpiar búsqueda actualiza la URL.
+- ✅ Abrir una URL con `?q=` y `?sort=` muestra el listado filtrado/ordenado.
+- ✅ Abrir directamente una conversación por su `id` funciona.
+
+---
+
+## GIF de prueba
+
+_Añadir aquí el GIF que muestre:_
+1. Filtrado con query param (`?q=` y `?sort=`)  
+2. Recarga de la página  
+3. Estado de filtros persistente
+
+![Filtrar y recargar](./ejercicios/gifs/act2.gif)
+
+---
 

@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const ConversationView = () => {
-    const { id } = useParams(); // para mostrar el id de la conversación
+    const { id } = useParams(); // lee el parámetro de ruta
     return (
         <div>
             <h1>Conversación {id}</h1>

@@ -1,52 +1,39 @@
-// src/components/Views/ConversationsView.jsx
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
 
 const ConversationsView = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [q, setQ] = useState(searchParams.get("q") || "");
-    const [sort, setSort] = useState(searchParams.get("sort") || "asc");
+    const scrollRef = useRef(null);
 
-    // Actualiza URL cuando cambian q o sort
+    // Restaurar scroll
     useEffect(() => {
-        const params = {};
-        if (q) params.q = q;
-        if (sort) params.sort = sort;
-        setSearchParams(params);
-    }, [q, sort, setSearchParams]);
+        const savedScroll = sessionStorage.getItem("conversationsScroll");
+        if (savedScroll && scrollRef.current) {
+            scrollRef.current.scrollTop = Number(savedScroll);
+        }
+    }, []);
 
-    // Simulación de filtrado/orden de conversaciones
-    const conversaciones = [
-        { id: 1, nombre: "Ana" },
-        { id: 2, nombre: "Luis" },
-        { id: 3, nombre: "Marta" },
-    ]
-        .filter(c => c.nombre.toLowerCase().includes(q.toLowerCase()))
-        .sort((a, b) => (sort === "asc" ? a.nombre.localeCompare(b.nombre) : b.nombre.localeCompare(a.nombre)));
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            sessionStorage.setItem("conversationsScroll", scrollRef.current.scrollTop);
+        }
+    };
+
+    // Simulación de lista larga
+    const conversations = Array.from({ length: 50 }, (_, i) => `Conversación ${i + 1}`);
 
     return (
         <div>
             <h1>Conversaciones</h1>
-            <div>
-                <label>
-                    Buscar:{" "}
-                    <input value={q} onChange={e => setQ(e.target.value)} placeholder="Nombre" />
-                </label>
-                <label style={{ marginLeft: "1rem" }}>
-                    Orden:{" "}
-                    <select value={sort} onChange={e => setSort(e.target.value)}>
-                        <option value="asc">Ascendente</option>
-                        <option value="desc">Descendente</option>
-                    </select>
-                </label>
-            </div>
-            <ul>
-                {conversaciones.map(c => (
-                    <li key={c.id}>
-                        {c.nombre} (<a href={`/conversacion/${c.id}`}>Abrir</a>)
-                    </li>
+            <div
+                ref={scrollRef}
+                onScroll={handleScroll}
+                style={{ height: "400px", overflowY: "auto", border: "1px solid #ccc", padding: "0.5rem" }}
+            >
+                {conversations.map((conv, idx) => (
+                    <div key={idx} style={{ padding: "0.5rem 0", borderBottom: "1px solid #eee" }}>
+                        {conv}
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -12,14 +11,15 @@ import ConversationView from "./components/Views/ConversationView";
 import PokedexView from "./components/Views/PokedexView";
 import SettingsView from "./components/Views/SettingsView";
 import LoginView from "./components/Auth/LoginView";
+import NotFoundView from "./components/Views/NotFoundView";
 
 import { getSession } from "./services/storage";
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // Al cargar la app, resetear sesión
     useEffect(() => {
+        // Siempre iniciar como no logueado al cargar la app
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("sessionTime");
         setIsLoggedIn(false);
@@ -37,20 +37,17 @@ const App = () => {
     return (
         <Router>
             <AppLayout>
-                {/* Indicador de sesión y botón logout */}
                 <SessionIndicator onLogout={() => setIsLoggedIn(false)} />
-
-                {/* Navbar solo visible si hay sesión */}
                 {isLoggedIn && <NavBar />}
 
                 <Routes>
-                    {/* Vista pública */}
                     <Route
                         path="/login"
                         element={<LoginView onLogin={() => setIsLoggedIn(true)} />}
                     />
 
-                    {/* Rutas protegidas */}
+                    <Route path="*" element={<NotFoundView />} />
+
                     <Route
                         path="/"
                         element={isLoggedIn ? <ChatView /> : <Navigate to="/login" replace />}

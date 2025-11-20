@@ -1,25 +1,43 @@
 // src/components/Views/ConversationView.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const ConversationView = () => {
+const ConversationView = ({ setConversationId }) => {
     const { id } = useParams(); // lee el parámetro de ruta
     const scrollRef = useRef(null);
     const messagesEndRef = useRef(null);
     const navigate = useNavigate();
 
     const [conversation, setConversation] = useState(null);
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        const all = JSON.parse(localStorage.getItem("all_conversations") || "[]");
-        const conv = all.find(c => c.id === Number(id) || c.id === id);
-        if (conv) {
-            setConversation(conv);
-        } else {
-            // Si no se encuentra, volver a la lista de conversaciones
-            navigate("/conversaciones");
-        }
-    }, [id, navigate]);
+        const load = async () => {
+            try {
+                // Try to fetch messages for this conversation id; if it exists, we redirect to ChatView
+                const res = await axios.get(`http://localhost:3001/conversations/${id}/messages`);
+                const msgs = res.data || [];
+
+                // Build a lightweight conversation object for preview
+                const conv = { id, name: `Conversación ${id}`, messages: msgs };
+                setConversation(conv);
+
+                // Set the app-level conversation id so ChatView will show it (if parent provided prop)
+                if (typeof setConversationId === "function") {
+                    setConversationId(id);
+                }
+
+                // Navigate to main chat view to show the conversation
+                navigate("/");
+            } catch (err) {
+                console.warn("Conversation not found on server", err?.message || err);
+                setNotFound(true);
+            }
+        };
+
+        load();
+    }, [id, navigate, setConversationId]);
 
     // Restaurar scroll
     useEffect(() => {
@@ -36,7 +54,17 @@ const ConversationView = () => {
         }
     };
 
-    if (!conversation) return null;
+    if (notFound) {
+        return (
+            <div style={{ padding: '1rem' }}>
+                <h2>Conversación no encontrada</h2>
+                <p>No se encontró la conversación solicitada (id: {id}).</p>
+                <button onClick={() => navigate('/conversaciones')}>Volver a Conversaciones</button>
+            </div>
+        );
+    }
+
+    if (!conversation) return <p style={{ padding: '1rem' }}>Cargando conversación...</p>;
 
     return (
         <div style={{ padding: "1rem" }}>
@@ -50,7 +78,7 @@ const ConversationView = () => {
                     borderRadius: "5px",
                     height: "300px",
                     overflowY: "auto",
-                    backgroundColor: "#f0f0f0",
+                    backgroundColor: "#5e5b5bff",
                 }}
             >
                 {conversation.messages.length === 0 && (

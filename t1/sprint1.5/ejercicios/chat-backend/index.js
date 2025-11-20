@@ -13,12 +13,61 @@ const PORT = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Simple users table creation (if it doesn't exist) at startup
+db.query(`
+    CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(100) UNIQUE NOT NULL,
+        password_hash VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+`).catch(err => console.error("Error ensuring users table:", err));
+
 // 🔹 Crear nueva conversación
 app.post("/conversations", async (req, res) => {
     try {
         const { name } = req.body;
         const [result] = await db.query("INSERT INTO conversations (name) VALUES (?)", [name || "Nueva conversación"]);
         res.json({ id: result.insertId, name: name || "Nueva conversación" });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// 🔹 Registro de usuario
+const bcrypt = require('bcryptjs');
+
+app.post('/auth/register', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        if (!username || !password) return res.status(400).json({ error: 'username and password required' });
+
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+
+        const [result] = await db.query('INSERT INTO users (username, password_hash) VALUES (?, ?)', [username, hash]);
+        res.json({ id: result.insertId, username });
+    } catch (err) {
+        if (err && err.code === 'ER_DUP_ENTRY') return res.status(409).json({ error: 'username_exists' });
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// 🔹 Login
+app.post('/auth/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        if (!username || !password) return res.status(400).json({ error: 'username and password required' });
+
+        const [rows] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
+        const user = rows[0];
+        if (!user) return res.status(401).json({ error: 'invalid_credentials' });
+
+        const ok = bcrypt.compareSync(password, user.password_hash);
+        if (!ok) return res.status(401).json({ error: 'invalid_credentials' });
+
+        // For simplicity return user id and username (no JWT)
+        res.json({ id: user.id, username: user.username });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }

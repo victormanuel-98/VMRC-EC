@@ -55,6 +55,7 @@ const App = () => {
                         path="/conversaciones"
                         element={isLoggedIn ? (
                             <ConversationsView
+                                conversationId={conversationId}
                                 setConversationId={setConversationId}
                             />
                         ) : <Navigate to="/login" replace />}
@@ -62,7 +63,9 @@ const App = () => {
 
                     <Route
                         path="/conversacion/:id"
-                        element={isLoggedIn ? <ConversationView /> : <Navigate to="/login" replace />}
+                        element={isLoggedIn ? (
+                            <ConversationView setConversationId={setConversationId} />
+                        ) : <Navigate to="/login" replace />}
                     />
 
                     <Route

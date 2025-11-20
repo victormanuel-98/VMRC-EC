@@ -1,9 +1,9 @@
+// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import AppLayout from "./components/Layout/AppLayout";
 import NavBar from "./components/Navigation/NavBar";
-import SessionIndicator from "./components/Auth/SessionIndicator";
 
 import ChatView from "./components/Views/ChatView";
 import ConversationsView from "./components/Views/ConversationsView";
@@ -16,16 +16,10 @@ import NotFoundView from "./components/Views/NotFoundView";
 import { getSession } from "./services/storage";
 
 const App = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(() => getSession());
+    const [conversationId, setConversationId] = useState(null); // Conversación activa
 
-    useEffect(() => {
-        // Siempre iniciar como no logueado al cargar la app
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("sessionTime");
-        setIsLoggedIn(false);
-    }, []);
-
-    // Mantener sincronizado el estado con localStorage
+    // Mantener sesión sincronizada
     useEffect(() => {
         const interval = setInterval(() => {
             const current = getSession();
@@ -36,8 +30,7 @@ const App = () => {
 
     return (
         <Router>
-            <AppLayout>
-                <SessionIndicator onLogout={() => setIsLoggedIn(false)} />
+            <AppLayout onLogout={() => setIsLoggedIn(false)}>
                 {isLoggedIn && <NavBar />}
 
                 <Routes>
@@ -50,20 +43,33 @@ const App = () => {
 
                     <Route
                         path="/"
-                        element={isLoggedIn ? <ChatView /> : <Navigate to="/login" replace />}
+                        element={isLoggedIn ? (
+                            <ChatView
+                                conversationId={conversationId}
+                                setConversationId={setConversationId}
+                            />
+                        ) : <Navigate to="/login" replace />}
                     />
+
                     <Route
                         path="/conversaciones"
-                        element={isLoggedIn ? <ConversationsView /> : <Navigate to="/login" replace />}
+                        element={isLoggedIn ? (
+                            <ConversationsView
+                                setConversationId={setConversationId}
+                            />
+                        ) : <Navigate to="/login" replace />}
                     />
+
                     <Route
                         path="/conversacion/:id"
                         element={isLoggedIn ? <ConversationView /> : <Navigate to="/login" replace />}
                     />
+
                     <Route
                         path="/pokedex"
                         element={isLoggedIn ? <PokedexView /> : <Navigate to="/login" replace />}
                     />
+
                     <Route
                         path="/ajustes"
                         element={isLoggedIn ? <SettingsView /> : <Navigate to="/login" replace />}

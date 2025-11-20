@@ -2,7 +2,7 @@
 import React from "react";
 import SessionIndicator from "../Auth/SessionIndicator";
 
-const AppLayout = ({ children }) => {
+const AppLayout = ({ children, onLogout = () => {} }) => {
     return (
         <div>
             <header style={{ 
@@ -15,7 +15,7 @@ const AppLayout = ({ children }) => {
                 <h2>Mi App Intermodular</h2>
 
                 <div style={{ position: "absolute", right: "1rem", top: "1rem" }}>
-                    <SessionIndicator />
+                    <SessionIndicator onLogout={onLogout} />
                 </div>
             </header>
 

@@ -1,19 +1,23 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const ConversationsView = () => {
+const ConversationsView = ({ setConversationId }) => {
     const scrollRef = useRef(null);
     const [conversations, setConversations] = useState([]);
     const navigate = useNavigate();
 
-    // Cargar conversaciones guardadas
-    useEffect(() => {
-        const all = JSON.parse(localStorage.getItem("all_conversations") || "[]");
-        setConversations(all);
-    }, []);
+    const fetchConversations = async () => {
+        try {
+            const res = await axios.get("http://localhost:3001/conversations");
+            setConversations(res.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
-    // Restaurar scroll
     useEffect(() => {
+        fetchConversations();
         const savedScroll = sessionStorage.getItem("conversationsScroll");
         if (savedScroll && scrollRef.current) {
             scrollRef.current.scrollTop = Number(savedScroll);
@@ -26,17 +30,18 @@ const ConversationsView = () => {
         }
     };
 
-    const showConversation = (conv) => {
-        // Guardar la conversación seleccionada
-        localStorage.setItem("chat_messages", JSON.stringify(conv));
-        // Navegar a ChatView
-        navigate("/"); // ChatView está en "/"
+    const showConversation = (id) => {
+        setConversationId(id);
+        navigate("/"); // volver al chat
     };
 
-    const deleteConversation = (index) => {
-        const newConvs = conversations.filter((_, i) => i !== index);
-        setConversations(newConvs);
-        localStorage.setItem("all_conversations", JSON.stringify(newConvs));
+    const deleteConversation = async (id) => {
+        try {
+            await axios.delete(`http://localhost:3001/conversations/${id}`);
+            fetchConversations();
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     return (
@@ -53,13 +58,11 @@ const ConversationsView = () => {
                     backgroundColor: "#f9f9f9"
                 }}
             >
-                {conversations.length === 0 && (
-                    <p style={{ color: "#666" }}>No hay conversaciones guardadas.</p>
-                )}
+                {conversations.length === 0 && <p>No hay conversaciones guardadas.</p>}
 
-                {conversations.map((conv, idx) => (
+                {conversations.map((conv) => (
                     <div
-                        key={idx}
+                        key={conv.id}
                         style={{
                             padding: "0.5rem",
                             marginBottom: "0.5rem",
@@ -70,20 +73,10 @@ const ConversationsView = () => {
                             alignItems: "center"
                         }}
                     >
-                        <span><strong>Conversación {idx + 1}</strong></span>
+                        <span><strong>{conv.name}</strong></span>
                         <div style={{ display: "flex", gap: "0.5rem" }}>
-                            <button
-                                onClick={() => showConversation(conv)}
-                                style={{ padding: "0.3rem 0.5rem" }}
-                            >
-                                Mostrar
-                            </button>
-                            <button
-                                onClick={() => deleteConversation(idx)}
-                                style={{ padding: "0.3rem 0.5rem" }}
-                            >
-                                Eliminar
-                            </button>
+                            <button onClick={() => showConversation(conv.id)}>Mostrar</button>
+                            <button onClick={() => deleteConversation(conv.id)}>Eliminar</button>
                         </div>
                     </div>
                 ))}

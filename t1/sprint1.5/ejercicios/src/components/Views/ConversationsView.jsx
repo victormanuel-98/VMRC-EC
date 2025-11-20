@@ -1,13 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loading from "../Feedback/Loading";
+import ErrorBlock from "../Feedback/ErrorBlock";
 
 const ConversationsView = ({ setConversationId }) => {
     const scrollRef = useRef(null);
     const [conversations, setConversations] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const fetchConversations = async () => {
+        setLoading(true);
+        setError(null);
         try {
             const res = await axios.get("http://localhost:3001/conversations");
             // Ensure numeric ordering by id (ascending)
@@ -15,6 +21,9 @@ const ConversationsView = ({ setConversationId }) => {
             setConversations(sorted);
         } catch (err) {
             console.error(err);
+            setError(err.message || "Error al cargar conversaciones");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -79,9 +88,13 @@ const ConversationsView = ({ setConversationId }) => {
                     backgroundColor: "#f9f9f9"
                 }}
             >
-                {conversations.length === 0 && <p>No hay conversaciones guardadas.</p>}
+                {loading && <Loading message="Cargando conversaciones..." />}
 
-                {conversations.map((conv) => (
+                {error && <ErrorBlock title="Error" message={error} />}
+
+                {!loading && !error && conversations.length === 0 && <p>No hay conversaciones guardadas.</p>}
+
+                {!loading && !error && conversations.map((conv) => (
                     <div
                         key={conv.id}
                         style={{

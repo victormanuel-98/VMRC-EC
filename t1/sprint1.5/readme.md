@@ -1,4 +1,5 @@
-### ENTORNO CLIENTE: SPRINT 1.5 ###
+# ENTORNO CLIENTE: SPRINT 1.5 #
+
 ---
 
 # Actividad 1 – Mapa de rutas y contenedores funcionales
@@ -70,7 +71,7 @@ Se han definido las rutas principales de la aplicación:
 
 ---
 
-## GIF de recorrido completo
+## GIF de prueba
 
 ![Recorrido de navegación](./ejercicios/gifs/act1.gif)
 
@@ -136,7 +137,7 @@ _Añadir aquí el GIF que muestre:_
 
 ---
 
-## Actividad 3: Rutas protegidas y login
+# Actividad 3: Rutas protegidas y login
 - Login simulado
 - Rutas protegidas: Chat, Conversaciones, Pokédex, Ajustes
 - Redirecciones automáticas según sesión
@@ -146,10 +147,40 @@ _Añadir aquí el GIF que muestre:_
 - ✅ Con sesión → acceso a rutas
 - ✅ Logout → vista pública
 
-**GIF login/logout:**  
+## GIF de prueba
 ![Login/Logout](./ejercicios/gifs/act3.gif)
 
 ---
 
+# Actividad 4 — Gestión del Historial, Scroll y Foco
+
+1. **Historial:** Verificar que las acciones Atrás/Adelante recuperan vista y parámetros previos.
+2. **Scroll:** Restaurar la posición del scroll al regresar a un listado (p. ej., *ConversationsView*).
+3. **Foco:** Enfocar automáticamente:
+   - El input al entrar en Chat.
+   - Un elemento relevante al cambiar de vista.
+
+## Estructura esperada
+```
+src/
+├── components/
+│ ├── Views/
+│ │ └── ConversationsView.jsx
+│ └── Feedback/
+│ └── ScreenAnnouncer.jsx
+└── styles/
+└── layout.css
+```
+## Pruebas
+
+- ✅ Navegar entre vistas y usar Atrás/Adelante mantiene estado/params.
+- ✅ El scroll se restaura al volver a listados.
+- ✅ El foco cae en el campo esperado.
+- ✅ GIF: navegar a listado → bajar scroll → ir a detalle → volver → scroll restaurado.
+
+## Gif de prueba
+![scroll/foco](./ejercicios/gifs/act4.gif)
+
+---
 
 

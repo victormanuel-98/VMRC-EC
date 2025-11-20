@@ -269,10 +269,10 @@ src/
 
 ## Capturas de la Base de Datos de HeidiSQL
 
-![tabla messages](./ejercicios/gifs/bd2.gif)
+![tabla messages](./ejercicios/gifs/bd2.png)
 
 ---
 
-![tabla conversations](./ejercicios/gifs/bd1.gif)
+![tabla conversations](./ejercicios/gifs/bd1.png)
 
 

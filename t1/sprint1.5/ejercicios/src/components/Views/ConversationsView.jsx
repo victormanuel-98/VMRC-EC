@@ -10,18 +10,39 @@ const ConversationsView = ({ setConversationId }) => {
     const fetchConversations = async () => {
         try {
             const res = await axios.get("http://localhost:3001/conversations");
-            setConversations(res.data);
+            // Ensure numeric ordering by id (ascending)
+            const sorted = res.data.slice().sort((a, b) => Number(a.id) - Number(b.id));
+            setConversations(sorted);
         } catch (err) {
             console.error(err);
         }
     };
 
     useEffect(() => {
-        fetchConversations();
+        // call fetchConversations asynchronously to avoid synchronous setState in effect body
+        (async () => { await fetchConversations(); })();
         const savedScroll = sessionStorage.getItem("conversationsScroll");
         if (savedScroll && scrollRef.current) {
             scrollRef.current.scrollTop = Number(savedScroll);
         }
+        // Save scroll when visibility changes or before unload to preserve position
+        const saveScroll = () => {
+            if (scrollRef.current) sessionStorage.setItem("conversationsScroll", scrollRef.current.scrollTop);
+        };
+
+        const handleVisibility = () => {
+            if (document.visibilityState === "hidden") saveScroll();
+        };
+
+        window.addEventListener("visibilitychange", handleVisibility);
+        window.addEventListener("beforeunload", saveScroll);
+
+        return () => {
+            // Save scroll on unmount so navigation between routes preserves position
+            saveScroll();
+            window.removeEventListener("visibilitychange", handleVisibility);
+            window.removeEventListener("beforeunload", saveScroll);
+        };
     }, []);
 
     const handleScroll = () => {

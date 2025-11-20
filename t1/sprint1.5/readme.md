@@ -183,4 +183,51 @@ src/
 
 ---
 
+## Actividad 5 – Manejo unificado de Errores, 404 y Estados de Carga
+
+- Tarea 1: Vista 404 funcional: Cualquier URL no declarada muestra NotFoundView.jsx.
+
+- Tarea 2: Estados de carga homogéneos: Se ha creado el componente Loading.jsx dentro de components/Feedback.
+
+- Tarea 3: Captura de error por vista: Nuevo componente ErrorBlock.jsx para mostrar errores sin romper la app.
+
+En caso de fallo (ej.: API de POKEAPI caída), la vista muestra un mensaje local.
+
+La navegación se mantiene totalmente operativa.
+
+## Estructura de archivos
+```
+src/
+ ├── components/
+ │   ├── Views/
+ │   │    └── NotFoundView.jsx
+ │   └── Feedback/
+ │        ├── Loading.jsx
+ │        └── ErrorBlock.jsx
+ ├── styles/
+ │   ├── layout.css
+ │   └── chatbot.css
+public/
+ └── assets/
+```
+
+## Pruebas
+
+- ✅ Introducir una URL desconocida muestra la vista 404
+- ✅ Estados de carga visibles durante peticiones reales
+- ✅ Error de la API (POKEAPI) → muestra ErrorBlock sin romper la app
+- ✅ GIF demostrativo:
+
+### 1. Acceso a URL inexistente → 404 → volver a inicio
+
+![error 404](./ejercicios/gifs/act5.1.gif)
+
+---
+
+### 2. Forzar error de API → bloque de error en pantalla
+
+![forzar error API](./ejercicios/gifs/act5.2.gif)
+
+---
+
 

@@ -230,4 +230,49 @@ public/
 
 ---
 
+# Actividad 6 – Deep-linking de conversación y navegación programática
+
+- Tarea 1: Abrir conversación por URL. Se permite acceder directamente mediante /conversations/:id.
+
+- Tarea 2: Navegación programática desde la UI
+
+- Tarea 3: Estados vacíos. Si el id no existe, ConversationView.jsx muestra un estado tipo: “La conversación no existe” con un botón Volver a Conversaciones.
+
+## Estructura de archivos
+```
+src/
+ ├── components/
+ │   ├── Chatbot/
+ │   │    ├── ChatWindow.jsx
+ │   │    ├── MessageList.jsx
+ │   │    └── MessageInput.jsx
+ │   └── Views/
+ │        ├── ConversationsView.jsx
+ │        └── ConversationView.jsx   # gestiona id inexistente/duplicado
+ └── services/
+      └── conversations.js           # contrato de lectura por id (doc)
+```
+## Pruebas
+
+- ✅ Abrir por URL una conversación válida muestra el historial correctamente.
+- ✅ “Nueva conversación” navega al ID recién creado.
+- ✅ “Duplicar” crea un clon y navega hacia él.
+- ✅ “Borrar” redirige al listado sin errores.
+- ✅ Conversación inexistente muestra estado “no encontrada” + enlace de retorno.
+- ✅ GIF demostrativo:
+
+### 1. Copiar URL de conversación → pegar en otra pestaña → la conversación carga + Borrar → navegación automática al listado.
+
+![copia URL](./ejercicios/gifs/act6.gif)
+
+---
+
+## Capturas de la Base de Datos de HeidiSQL
+
+![tabla messages](./ejercicios/gifs/bd2.gif)
+
+---
+
+![tabla conversations](./ejercicios/gifs/bd1.gif)
+
 

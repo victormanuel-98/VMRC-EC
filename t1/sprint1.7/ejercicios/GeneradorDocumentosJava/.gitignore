@@ -34,7 +34,6 @@ docker-compose.override.yml
 *.local.env
 
 # Images and binary artifacts
-images/
 **/bin/
 
 # History / data

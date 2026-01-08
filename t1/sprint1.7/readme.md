@@ -1,6 +1,4 @@
-# GeneradorDocumentosJava — Guía rápida
-
-Este README es una versión limpia y ampliada con el proceso, placeholders para imágenes y pasos rápidos.
+# Generador de Documentos Java — Guía rápida
 
 ## Resumen
 Herramienta para analizar proyectos Java y generar documentación técnica (Markdown, PlantUML, PDF). Backend en Node.js/Express, frontend en React (Vite). Docker-ready.
@@ -12,7 +10,7 @@ Herramienta para analizar proyectos Java y generar documentación técnica (Mark
 
 ## Instrucciones rápidas (Docker)
 
-```bash
+```
 # desde la raíz del proyecto
 docker compose build
 docker compose up -d
@@ -43,7 +41,7 @@ docker compose logs -f backend
 
 ## Placeholders para imágenes
 
-- Imagen del terminal con Docker containers:
+- Imagen del terminal con contenedores Docker funcionando:
 
 ![Docker containers running](images/docker-containers.png)
 

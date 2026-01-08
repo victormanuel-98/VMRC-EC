@@ -43,11 +43,11 @@ docker compose logs -f backend
 
 - Imagen del terminal con contenedores Docker funcionando:
 
-![Docker containers running](./images/dockerCorriendo.png)
+![Docker containers running](./dockerCorriendo.png)
 
 - GIF del proceso (subida → análisis → descarga):
 
-![Process GIF](./images/videoResultado.gif)
+![Process GIF](./videoResultado.gif)
 
 ## Siguientes pasos recomendados
 
